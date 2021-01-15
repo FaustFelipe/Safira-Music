@@ -74,12 +74,22 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_artist_list"
+        tools:itemCount="3"
         android:layout_marginTop="@dimen/margin_8"
-        android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginEnd="@dimen/margin_16"
         app:layout_constraintTop_toBottomOf="@+id/llTitleSearches"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvSearches"
+        app:layout_constraintBottom_toBottomOf="@+id/rvSearches"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
