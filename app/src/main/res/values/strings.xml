@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Safira Teste</string>
+
+    <string name="search">Pesquisar</string>
+    <string name="search_for">Pesquise por artistas</string>
+    <string name="results">Resultados</string>
+    <string name="clear">Limpar</string>
+
+    <!-- Domain -->
+    <string name="BASE_URL">https://api.spotify.com/v1/</string>
 </resources>
