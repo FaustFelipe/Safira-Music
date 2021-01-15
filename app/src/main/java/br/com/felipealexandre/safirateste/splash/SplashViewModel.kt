@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.felipealexandre.safirateste.common.SingleLiveEvent
-import br.com.felipealexandre.safirateste.repository.SafiraRepository
+import br.com.felipealexandre.safirateste.repository.SafiraRepositoryImpl
 import br.com.felipealexandre.safirateste.repository.preferences.SafiraAppPreferencesHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 
 class SplashViewModel(
     private val context: Context,
-    private val repository: SafiraRepository
+    private val repository: SafiraRepositoryImpl
 ): ViewModel() {
 
     val showError = SingleLiveEvent<String>()
