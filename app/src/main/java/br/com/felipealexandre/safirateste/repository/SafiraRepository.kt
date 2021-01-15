@@ -3,12 +3,16 @@ package br.com.felipealexandre.safirateste.repository
 import br.com.felipealexandre.safirateste.common.ApiKeyBase64
 import br.com.felipealexandre.safirateste.model.Artists
 import br.com.felipealexandre.safirateste.model.AuthorizationToken
+import br.com.felipealexandre.safirateste.model.RelatedArtists
+import br.com.felipealexandre.safirateste.model.RelatedArtistsInfo
 import br.com.felipealexandre.safirateste.repository.http.SafiraHttpApi
 import br.com.felipealexandre.safirateste.repository.preferences.SafiraAppPreferencesHelper
 import retrofit2.Response
 
 interface SafiraRepository {
     suspend fun getArtistsBySearch(token: String, query: String): Response<Artists>
+    suspend fun getArtist(token: String, id: String): Response<RelatedArtistsInfo>
+    suspend fun getRelatedArtists(token: String, id: String): Response<RelatedArtists>
     suspend fun getTokenAsync(): Response<AuthorizationToken>
 }
 
@@ -21,6 +25,20 @@ class SafiraRepositoryImpl(
             "Bearer $token",
             query,
             "artist"
+        )
+    }
+
+    override suspend fun getArtist(token: String, id: String): Response<RelatedArtistsInfo> {
+        return service.getArtist(
+            "Bearer $token",
+            id
+        )
+    }
+
+    override suspend fun getRelatedArtists(token: String, id: String): Response<RelatedArtists> {
+        return service.getRelatedArtists(
+            "Bearer $token",
+            id
         )
     }
 

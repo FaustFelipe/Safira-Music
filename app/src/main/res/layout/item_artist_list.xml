@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clArtistSearch"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackground">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvArtist"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/margin_16"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imgArtist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        app:layout_constraintStart_toEndOf="@+id/cvArtist"
+        app:layout_constraintTop_toTopOf="@+id/cvArtist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cvArtist">
+
+        <TextView
+            android:id="@+id/txtArtistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Nome do artista"
+            android:textSize="@dimen/font_18"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/colorOrangeOne"/>
+
+        <TextView
+            android:id="@+id/txtArtistGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Algum gênero"
+            android:fontFamily="@font/montserrat"/>
+
+        <TextView
+            android:id="@+id/txtArtistFollowers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="50k seguidores"
+            android:textSize="@dimen/font_16"
+            android:fontFamily="@font/montserrat"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
