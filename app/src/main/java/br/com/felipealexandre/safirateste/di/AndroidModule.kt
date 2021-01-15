@@ -2,8 +2,9 @@ package br.com.felipealexandre.safirateste.di
 
 import br.com.felipealexandre.safirateste.BuildConfig
 import br.com.felipealexandre.safirateste.R
-import br.com.felipealexandre.safirateste.repository.SafiraRepository
+import br.com.felipealexandre.safirateste.repository.SafiraRepositoryImpl
 import br.com.felipealexandre.safirateste.repository.http.SafiraHttpApi
+import br.com.felipealexandre.safirateste.searchartists.SearchArtistsViewModel
 import br.com.felipealexandre.safirateste.splash.SplashViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -60,8 +61,8 @@ val networkModule = module {
 
 val repositoryModule = module {
 
-    fun provideSafiraRepository(service: SafiraHttpApi): SafiraRepository {
-        return SafiraRepository(service)
+    fun provideSafiraRepository(service: SafiraHttpApi): SafiraRepositoryImpl {
+        return SafiraRepositoryImpl(service)
     }
 
     single { provideSafiraRepository(get()) }
@@ -72,6 +73,10 @@ val viewModelModule = module {
 
     viewModel {
         SplashViewModel(context = androidContext(),repository = get())
+    }
+
+    viewModel {
+        SearchArtistsViewModel(context = androidContext(), repository = get())
     }
 
 }
